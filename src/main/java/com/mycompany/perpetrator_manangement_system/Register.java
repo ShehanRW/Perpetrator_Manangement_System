@@ -4,6 +4,7 @@
  */
 package com.mycompany.perpetrator_manangement_system;
 
+import java.awt.Color;
 import javax.swing.JFrame;
 
 /**
@@ -16,9 +17,12 @@ public class Register extends javax.swing.JFrame {
      * Creates new form Register
      */
     public Register() {
-        initComponents();
+       initComponents();
         //Full Screen
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        
+        Color primaryColor = new Color(0,11,40);
+        getContentPane().setBackground(primaryColor);
     }
 
     /**
@@ -67,6 +71,7 @@ public class Register extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Register Perpetrator");
+        setUndecorated(true);
         setResizable(false);
 
         title_content.setBackground(new java.awt.Color(0, 11, 40));

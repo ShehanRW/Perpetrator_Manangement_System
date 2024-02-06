@@ -70,6 +70,11 @@ public class Menu extends javax.swing.JFrame {
         jButton2.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(119, 155, 255));
         jButton2.setText("New");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setBackground(new java.awt.Color(0, 2, 69));
         jButton3.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
@@ -80,6 +85,11 @@ public class Menu extends javax.swing.JFrame {
         jButton4.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(119, 155, 255));
         jButton4.setText("Exit");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -125,6 +135,16 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        new Register().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        new LoginActivity().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
