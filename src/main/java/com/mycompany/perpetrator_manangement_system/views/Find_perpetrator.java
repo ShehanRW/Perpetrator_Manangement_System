@@ -1,5 +1,5 @@
 
-package com.mycompany.perpetrator_manangement_system;
+package com.mycompany.perpetrator_manangement_system.views;
 
 import javax.swing.JFrame;
 
@@ -31,7 +31,6 @@ public class Find_perpetrator extends javax.swing.JFrame {
         back_btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1345, 560));
 
         jPanel1.setBackground(new java.awt.Color(0, 11, 40));
 

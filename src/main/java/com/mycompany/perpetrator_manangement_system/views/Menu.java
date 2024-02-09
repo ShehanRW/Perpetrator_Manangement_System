@@ -1,5 +1,5 @@
 
-package com.mycompany.perpetrator_manangement_system;
+package com.mycompany.perpetrator_manangement_system.views;
 
 import java.awt.Color;
 import javax.swing.JFrame;
@@ -22,13 +22,14 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem1 = new javax.swing.JMenuItem();
-        jButton1 = new javax.swing.JButton();
+        btn_database = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btn_new = new javax.swing.JButton();
+        btn_admins = new javax.swing.JButton();
+        btn_exit = new javax.swing.JButton();
+        btn_exit_to_login = new javax.swing.JButton();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -39,10 +40,10 @@ public class Menu extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
 
-        jButton1.setBackground(new java.awt.Color(0, 2, 69));
-        jButton1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(119, 155, 255));
-        jButton1.setText("Database");
+        btn_database.setBackground(new java.awt.Color(0, 2, 69));
+        btn_database.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btn_database.setForeground(new java.awt.Color(119, 155, 255));
+        btn_database.setText("Database");
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(119, 155, 255));
@@ -66,28 +67,38 @@ public class Menu extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(119, 155, 255));
         jLabel2.setText("Menu");
 
-        jButton2.setBackground(new java.awt.Color(0, 2, 69));
-        jButton2.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(119, 155, 255));
-        jButton2.setText("New");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_new.setBackground(new java.awt.Color(0, 2, 69));
+        btn_new.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btn_new.setForeground(new java.awt.Color(119, 155, 255));
+        btn_new.setText("New");
+        btn_new.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_newActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(0, 2, 69));
-        jButton3.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(119, 155, 255));
-        jButton3.setText("Admins");
+        btn_admins.setBackground(new java.awt.Color(0, 2, 69));
+        btn_admins.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btn_admins.setForeground(new java.awt.Color(119, 155, 255));
+        btn_admins.setText("Admins");
 
-        jButton4.setBackground(new java.awt.Color(0, 2, 69));
-        jButton4.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(119, 155, 255));
-        jButton4.setText("Exit");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btn_exit.setBackground(new java.awt.Color(0, 2, 69));
+        btn_exit.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btn_exit.setForeground(new java.awt.Color(119, 155, 255));
+        btn_exit.setText("Exit");
+        btn_exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btn_exitActionPerformed(evt);
+            }
+        });
+
+        btn_exit_to_login.setBackground(new java.awt.Color(0, 2, 69));
+        btn_exit_to_login.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        btn_exit_to_login.setForeground(new java.awt.Color(119, 155, 255));
+        btn_exit_to_login.setText(" Exit To Login");
+        btn_exit_to_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_exit_to_loginActionPerformed(evt);
             }
         });
 
@@ -107,10 +118,11 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_exit_to_login, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_admins, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_new, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_database, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(369, 369, 369))
         );
         layout.setVerticalGroup(
@@ -123,28 +135,34 @@ public class Menu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addGap(43, 43, 43)
-                .addComponent(jButton1)
+                .addComponent(btn_database)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(btn_new)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(btn_admins)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
-                .addContainerGap(285, Short.MAX_VALUE))
+                .addComponent(btn_exit_to_login)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_exit)
+                .addContainerGap(255, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btn_newActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_newActionPerformed
         new Register().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btn_newActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btn_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exitActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btn_exitActionPerformed
+
+    private void btn_exit_to_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exit_to_loginActionPerformed
         new LoginActivity().setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btn_exit_to_loginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,10 +200,11 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btn_admins;
+    private javax.swing.JButton btn_database;
+    private javax.swing.JButton btn_exit;
+    private javax.swing.JButton btn_exit_to_login;
+    private javax.swing.JButton btn_new;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;

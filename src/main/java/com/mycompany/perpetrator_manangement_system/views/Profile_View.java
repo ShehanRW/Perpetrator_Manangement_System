@@ -1,5 +1,5 @@
 
-package com.mycompany.perpetrator_manangement_system;
+package com.mycompany.perpetrator_manangement_system.views;
 
 import java.awt.event.MouseEvent;
 import javax.swing.JFrame;

@@ -1,5 +1,5 @@
  
-package com.mycompany.perpetrator_manangement_system;
+package com.mycompany.perpetrator_manangement_system.views;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 
