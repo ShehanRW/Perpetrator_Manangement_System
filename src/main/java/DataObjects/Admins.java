@@ -10,14 +10,6 @@ public class Admins {
     public Admins() {
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getAdminName() {
         return adminName;
     }
@@ -41,7 +33,5 @@ public class Admins {
     public void setAdminType(String adminType) {
         this.adminType = adminType;
     }
-    
-    
-    
+        
 }
