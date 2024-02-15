@@ -1,40 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package com.mycompany.perpetrator_manangement_system.views;
 
 import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 
-/**
- *
- * @author Shehan
- */
 public class Register extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Register
-     */
     public Register() {
        initComponents();
         //Full Screen
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         
         Color primaryColor = new Color(0,11,40);
-        Color caretColor = new Color(119,155,255);
         
         getContentPane().setBackground(primaryColor);
-        birth_place.setCaretColor(caretColor);
-        children.setCaretColor(caretColor);
-        spouse.setCaretColor(caretColor);
-        parents.setCaretColor(caretColor);
-        nick_names.setCaretColor(caretColor);
-        id1.setCaretColor(caretColor);
-        full_name.setCaretColor(caretColor);
-        dob.setCaretColor(caretColor);
-        description.setCaretColor(caretColor);
-        children.setCaretColor(caretColor);
+        
+        uiTextFieldStyle(birth_place);
+        uiTextFieldStyle(children);
+        uiTextFieldStyle(spouse);
+        uiTextFieldStyle(parents);
+        uiTextFieldStyle(nick_names);
+        uiTextFieldStyle(id1);
+        uiTextFieldStyle(full_name);
+        uiTextFieldStyle(dob);
+        uiTextFieldStyle(name_initials);
+        uiTextAreaStyle(description);
         
     }
 
@@ -79,7 +70,7 @@ public class Register extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         submit_btn = new javax.swing.JButton();
         back_btn = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("Register Perpetrator");
@@ -326,36 +317,15 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(119, 155, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(0, 4));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 4, Short.MAX_VALUE)
-        );
+        jSeparator1.setBackground(new java.awt.Color(0, 2, 69));
+        jSeparator1.setForeground(new java.awt.Color(119, 155, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1465, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(513, 513, 513)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(59, 59, 59)
-                                .addComponent(jLabel2)))
-                        .addGap(0, 546, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -400,8 +370,7 @@ public class Register extends javax.swing.JFrame {
                                 .addGap(83, 83, 83)
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
-                                .addComponent(status_combo_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(status_combo_box, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(137, 137, 137)
@@ -421,8 +390,17 @@ public class Register extends javax.swing.JFrame {
                                 .addGap(221, 221, 221)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(image_preview, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(insert_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE))))))
+                                    .addComponent(insert_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(513, 513, 513)
+                        .addComponent(jLabel1)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addComponent(jSeparator1)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,10 +408,10 @@ public class Register extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(7, 7, 7)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -649,8 +627,8 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JRadioButton male_rad_btn;
     private javax.swing.JTextField name_initials;
     private javax.swing.JTextField nick_names;
@@ -659,4 +637,25 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> status_combo_box;
     private javax.swing.JButton submit_btn;
     // End of variables declaration//GEN-END:variables
+
+    private void uiTextFieldStyle(javax.swing.JTextField textField){
+        textField.setBorder(BorderFactory.createCompoundBorder(
+        textField.getBorder(), 
+        BorderFactory.createEmptyBorder(2, 2, 2, 2)));
+        
+        Color caretColor = new Color(119,155,255);
+        textField.setCaretColor(caretColor);
+        textField.setCaretColor(caretColor);
+    }
+    
+    private void uiTextAreaStyle(javax.swing.JTextArea textField){
+        textField.setBorder(BorderFactory.createCompoundBorder(
+        textField.getBorder(), 
+        BorderFactory.createEmptyBorder(2, 2, 2, 2)));
+        
+        Color caretColor = new Color(119,155,255);
+        textField.setCaretColor(caretColor);
+        textField.setCaretColor(caretColor);
+    }
+
 }

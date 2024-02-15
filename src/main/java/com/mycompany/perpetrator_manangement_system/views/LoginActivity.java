@@ -11,17 +11,10 @@ public class LoginActivity extends javax.swing.JFrame {
     public LoginActivity() {
         initComponents();
         
-        Color caretColor = new Color(119,155,255);
-        userNameTextField.setCaretColor(caretColor);
-        passwordField.setCaretColor(caretColor);
-        
-        userNameTextField.setBorder(BorderFactory.createCompoundBorder(
-        userNameTextField.getBorder(), 
-        BorderFactory.createEmptyBorder(2, 2, 2, 2)));
-        
-        passwordField.setBorder(BorderFactory.createCompoundBorder(
-        passwordField.getBorder(), 
-        BorderFactory.createEmptyBorder(2, 2, 2, 2)));
+        // ui Styles
+        uiComponentDesign(userNameTextField);
+        uiComponentDesign(passwordField);
+
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -205,9 +198,6 @@ public class LoginActivity extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_proceed_btnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -253,5 +243,15 @@ public class LoginActivity extends javax.swing.JFrame {
     private javax.swing.JButton proceed_btn;
     private javax.swing.JTextField userNameTextField;
     // End of variables declaration//GEN-END:variables
+
+    private void uiComponentDesign(javax.swing.JTextField textField){
+        textField.setBorder(BorderFactory.createCompoundBorder(
+        textField.getBorder(), 
+        BorderFactory.createEmptyBorder(2, 2, 2, 2)));
+        
+        Color caretColor = new Color(119,155,255);
+        textField.setCaretColor(caretColor);
+        textField.setCaretColor(caretColor);
+    }
 
 }

@@ -159,7 +159,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_exit_to_loginActionPerformed
 
     private void btn_databaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_databaseActionPerformed
-        new Find_perpetrator().setVisible(true);
+        new DatabaseFun().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_databaseActionPerformed
 
