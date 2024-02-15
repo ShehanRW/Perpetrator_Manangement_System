@@ -15,6 +15,7 @@ public class DatabaseFun extends javax.swing.JFrame {
         Color primaryColor = new Color(0,11,40);
         Color caretColor = new Color(119,155,255);
 
+        // Search text field style
         getContentPane().setBackground(primaryColor);
         searchText.setCaretColor(caretColor);
         
