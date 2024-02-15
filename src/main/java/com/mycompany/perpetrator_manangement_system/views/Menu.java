@@ -44,6 +44,11 @@ public class Menu extends javax.swing.JFrame {
         btn_database.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         btn_database.setForeground(new java.awt.Color(119, 155, 255));
         btn_database.setText("Database");
+        btn_database.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_databaseActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(119, 155, 255));
@@ -163,6 +168,11 @@ public class Menu extends javax.swing.JFrame {
         new LoginActivity().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_exit_to_loginActionPerformed
+
+    private void btn_databaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_databaseActionPerformed
+        new Find_perpetrator().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_databaseActionPerformed
 
     /**
      * @param args the command line arguments
