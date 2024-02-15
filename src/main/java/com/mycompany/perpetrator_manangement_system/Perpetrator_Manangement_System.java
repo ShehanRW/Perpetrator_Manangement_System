@@ -1,7 +1,7 @@
 
 package com.mycompany.perpetrator_manangement_system;
 
-import com.mycompany.perpetrator_manangement_system.views.LoginActivity;
+import views.LoginActivity;
 
 public class Perpetrator_Manangement_System {
 
