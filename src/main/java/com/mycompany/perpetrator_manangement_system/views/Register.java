@@ -22,7 +22,20 @@ public class Register extends javax.swing.JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         
         Color primaryColor = new Color(0,11,40);
+        Color caretColor = new Color(119,155,255);
+        
         getContentPane().setBackground(primaryColor);
+        birth_place.setCaretColor(caretColor);
+        children.setCaretColor(caretColor);
+        spouse.setCaretColor(caretColor);
+        parents.setCaretColor(caretColor);
+        nick_names.setCaretColor(caretColor);
+        id1.setCaretColor(caretColor);
+        full_name.setCaretColor(caretColor);
+        dob.setCaretColor(caretColor);
+        description.setCaretColor(caretColor);
+        children.setCaretColor(caretColor);
+        
     }
 
     /**

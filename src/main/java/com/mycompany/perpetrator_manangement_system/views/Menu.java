@@ -24,12 +24,12 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         btn_database = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         btn_new = new javax.swing.JButton();
         btn_admins = new javax.swing.JButton();
         btn_exit = new javax.swing.JButton();
         btn_exit_to_login = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -53,20 +53,6 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(119, 155, 255));
         jLabel1.setText("Perpetraitor Database");
-
-        jPanel1.setBackground(new java.awt.Color(119, 155, 255));
-        jPanel1.setPreferredSize(new java.awt.Dimension(0, 4));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 4, Short.MAX_VALUE)
-        );
 
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(119, 155, 255));
@@ -107,6 +93,9 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jSeparator1.setBackground(new java.awt.Color(0, 2, 69));
+        jSeparator1.setForeground(new java.awt.Color(119, 155, 255));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,7 +104,6 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap(472, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap(472, Short.MAX_VALUE))
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1344, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(jLabel2)
@@ -129,15 +117,16 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(btn_new, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_database, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(369, 369, 369))
+            .addComponent(jSeparator1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(2, 2, 2)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
                 .addComponent(jLabel2)
                 .addGap(43, 43, 43)
                 .addComponent(btn_database)
@@ -218,6 +207,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

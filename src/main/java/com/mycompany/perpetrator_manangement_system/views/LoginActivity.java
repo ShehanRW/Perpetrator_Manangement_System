@@ -1,5 +1,7 @@
  
 package com.mycompany.perpetrator_manangement_system.views;
+import java.awt.Color;
+import javax.swing.BorderFactory;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 
@@ -8,6 +10,18 @@ public class LoginActivity extends javax.swing.JFrame {
     
     public LoginActivity() {
         initComponents();
+        
+        Color caretColor = new Color(119,155,255);
+        userNameTextField.setCaretColor(caretColor);
+        passwordField.setCaretColor(caretColor);
+        
+        userNameTextField.setBorder(BorderFactory.createCompoundBorder(
+        userNameTextField.getBorder(), 
+        BorderFactory.createEmptyBorder(2, 2, 2, 2)));
+        
+        passwordField.setBorder(BorderFactory.createCompoundBorder(
+        passwordField.getBorder(), 
+        BorderFactory.createEmptyBorder(2, 2, 2, 2)));
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -36,6 +50,7 @@ public class LoginActivity extends javax.swing.JFrame {
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 11, 40));
+        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(119, 155, 255), 2, true));
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(119, 155, 255));
@@ -119,7 +134,7 @@ public class LoginActivity extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(jLabel2)
-                        .addGap(0, 423, Short.MAX_VALUE)))
+                        .addGap(0, 419, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -157,7 +172,7 @@ public class LoginActivity extends javax.swing.JFrame {
                 .addComponent(proceed_btn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(close_btn)
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

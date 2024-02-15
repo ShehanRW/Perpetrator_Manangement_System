@@ -2,6 +2,7 @@
 package com.mycompany.perpetrator_manangement_system.views;
 
 import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 
 public class Find_perpetrator extends javax.swing.JFrame {
@@ -12,7 +13,14 @@ public class Find_perpetrator extends javax.swing.JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         
         Color primaryColor = new Color(0,11,40);
+        Color caretColor = new Color(119,155,255);
+
         getContentPane().setBackground(primaryColor);
+        searchText.setCaretColor(caretColor);
+        
+        searchText.setBorder(BorderFactory.createCompoundBorder(
+        searchText.getBorder(), 
+        BorderFactory.createEmptyBorder(2, 2, 2, 2)));
     }
 
     /**
@@ -25,6 +33,11 @@ public class Find_perpetrator extends javax.swing.JFrame {
     private void initComponents() {
 
         back_btn = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel2 = new javax.swing.JLabel();
+        searchText = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -39,21 +52,70 @@ public class Find_perpetrator extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(119, 155, 255));
+        jLabel1.setText("Perpetraitor Database");
+
+        jSeparator1.setBackground(new java.awt.Color(0, 2, 69));
+        jSeparator1.setForeground(new java.awt.Color(119, 155, 255));
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jSeparator2.setBackground(new java.awt.Color(0, 2, 69));
+        jSeparator2.setForeground(new java.awt.Color(119, 155, 255));
+
+        jLabel2.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(119, 155, 255));
+        jLabel2.setText("Search");
+
+        searchText.setBackground(new java.awt.Color(0, 2, 69));
+        searchText.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        searchText.setForeground(new java.awt.Color(119, 155, 255));
+        searchText.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        searchText.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchTextMouseClicked(evt);
+            }
+        });
+        searchText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchTextActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(1087, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator2)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(searchText))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 874, Short.MAX_VALUE)
                 .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(528, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(searchText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(463, Short.MAX_VALUE))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(20, 20, 20))
         );
 
         pack();
@@ -63,6 +125,14 @@ public class Find_perpetrator extends javax.swing.JFrame {
         new Menu().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_back_btnActionPerformed
+
+    private void searchTextMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchTextMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchTextMouseClicked
+
+    private void searchTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextActionPerformed
+        
+    }//GEN-LAST:event_searchTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,5 +171,10 @@ public class Find_perpetrator extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back_btn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextField searchText;
     // End of variables declaration//GEN-END:variables
 }
