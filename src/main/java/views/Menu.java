@@ -72,6 +72,11 @@ public class Menu extends javax.swing.JFrame {
         btn_admins.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         btn_admins.setForeground(new java.awt.Color(119, 155, 255));
         btn_admins.setText("Admins");
+        btn_admins.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_adminsActionPerformed(evt);
+            }
+        });
 
         btn_exit.setBackground(new java.awt.Color(0, 2, 69));
         btn_exit.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
@@ -162,6 +167,11 @@ public class Menu extends javax.swing.JFrame {
         new DatabaseFun().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btn_databaseActionPerformed
+
+    private void btn_adminsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_adminsActionPerformed
+        new AdminsView().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btn_adminsActionPerformed
 
     /**
      * @param args the command line arguments
