@@ -8,16 +8,19 @@ public class LoginOperation {
     DatabaseConnection connection;
     String loginOperation;
 
-    private final String query = "SELECT userName, adminPassword FROM perpetratordb.admins";
-
     public LoginOperation() {     
-        loginOperation = DatabaseConnection.getDbConnection().getLoginDetails(query);
+        
     }
     
     public boolean isUserAccessible(String username, String password){
-        
+        loginOperation = DatabaseConnection.getDbConnection().getLoginDetails(username);
         boolean userValidation;
-        userValidation = loginOperation == null ? username+password == null : loginOperation.equals(username+password);
+        if(loginOperation.equals(password) ){
+            userValidation = true;
+        }
+        else{
+            userValidation = false;
+        }
         
         return userValidation;
     }
