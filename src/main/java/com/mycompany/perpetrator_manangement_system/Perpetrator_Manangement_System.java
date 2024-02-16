@@ -10,6 +10,6 @@ public class Perpetrator_Manangement_System {
         LoginActivity loginActivity = new LoginActivity();
         loginActivity.setVisible(true);
         
-        DatabaseConnection connect = new DatabaseConnection();
+        DatabaseConnection connect = DatabaseConnection.getDbConnection();
     }
 }
