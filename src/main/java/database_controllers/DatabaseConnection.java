@@ -2,11 +2,13 @@ package database_controllers;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class DatabaseConnection {
     
@@ -39,22 +41,23 @@ public class DatabaseConnection {
         return dbInstance;
     }
     
-    public String getLoginDetails(String query){
-        String username = null;
-        String password = null;
-        try{
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(query);
+    public String getLoginDetails(String username){
+        String adminPassword = "";
+        String query = "SELECT userName, adminPassword FROM admins WHERE userName = ?";
+        
+        try(PreparedStatement preparedStatement = connection.prepareStatement(query)){
+             preparedStatement.setString(1, username);
+            ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
-                username = resultSet.getString("userName");
-                password = resultSet.getString("adminPassword");
+                adminPassword = resultSet.getString("adminPassword");
             }
         }
         catch(Exception e){
             e.printStackTrace();
+            showMessageDialog(null, "Access denied..!");
         }
         
-        return username+password;
+        return adminPassword;
         
     }
     
