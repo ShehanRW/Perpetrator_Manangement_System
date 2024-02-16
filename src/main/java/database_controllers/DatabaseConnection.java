@@ -46,7 +46,7 @@ public class DatabaseConnection {
         String query = "SELECT userName, adminPassword FROM admins WHERE userName = ?";
         
         try(PreparedStatement preparedStatement = connection.prepareStatement(query)){
-             preparedStatement.setString(1, username);
+            preparedStatement.setString(1, username);
             ResultSet resultSet = preparedStatement.executeQuery();
             while(resultSet.next()){
                 adminPassword = resultSet.getString("adminPassword");
