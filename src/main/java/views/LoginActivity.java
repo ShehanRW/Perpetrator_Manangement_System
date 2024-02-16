@@ -198,10 +198,12 @@ public class LoginActivity extends javax.swing.JFrame {
             showMessageDialog(null, "The Username and Password feilds are required.");
             userNameTextField.setText("");
             passwordField.setText("");
-        }else if(login.isUserAccessible(username, password)){
+        }
+        else if(login.isUserAccessible(username, password)){
             new Menu().setVisible(true);
             this.dispose();
-        }else{
+        }
+        else{
             userNameTextField.setText("");
             passwordField.setText("");
             showMessageDialog(null, "Access denied..!");
