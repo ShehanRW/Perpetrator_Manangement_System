@@ -9,7 +9,7 @@ public class LoginOperation {
     String loginOperation;
 
     public LoginOperation() {     
-        
+        //constructor
     }
     
     public boolean isUserAccessible(String username, String password){
