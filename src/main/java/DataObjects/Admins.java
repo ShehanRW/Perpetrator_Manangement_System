@@ -3,11 +3,21 @@ package DataObjects;
 public class Admins {
     
     private int id;
+    private String username;
     private String adminName;
     private String position;
     private String adminType;
 
     public Admins() {
+        //constructor
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getAdminName() {
