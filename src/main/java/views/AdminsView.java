@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package views;
 
+import DataObjects.Admins;
 import java.awt.Color;
 import javax.swing.JFrame;
 
@@ -17,6 +14,9 @@ public class AdminsView extends javax.swing.JFrame {
         
         Color primaryColor = new Color(0,11,40);
         getContentPane().setBackground(primaryColor);
+        
+        // calling admins data object
+        Admins admins = new Admins();
     }
 
     @SuppressWarnings("unchecked")
