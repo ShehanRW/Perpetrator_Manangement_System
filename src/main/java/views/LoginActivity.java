@@ -1,5 +1,6 @@
  
 package views;
+import dataOperations.LoginOperation;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -188,13 +189,22 @@ public class LoginActivity extends javax.swing.JFrame {
     }//GEN-LAST:event_close_btnActionPerformed
 
     private void proceed_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_proceed_btnActionPerformed
+        
+        LoginOperation login = new LoginOperation();
+        String username = userNameTextField.getText();
+        String password = passwordField.getText();
+        
         if(userNameTextField.getText().equals("")||passwordField.getText().equals("")){
             showMessageDialog(null, "The Username and Password feilds are required.");
             userNameTextField.setText("");
             passwordField.setText("");
-        }else{
+        }else if(login.isUserAccessible(username, password)){
             new Menu().setVisible(true);
             this.dispose();
+        }else{
+            userNameTextField.setText("");
+            passwordField.setText("");
+            showMessageDialog(null, "Access denied..!");
         }
     }//GEN-LAST:event_proceed_btnActionPerformed
 
