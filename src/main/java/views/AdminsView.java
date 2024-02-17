@@ -1,6 +1,7 @@
 package views;
 
 import DataObjects.Admins;
+import database_controllers.DatabaseConnection;
 import java.awt.Color;
 import javax.swing.JFrame;
 
@@ -15,8 +16,8 @@ public class AdminsView extends javax.swing.JFrame {
         Color primaryColor = new Color(0,11,40);
         getContentPane().setBackground(primaryColor);
         
-        // calling admins data object
-        Admins admins = new Admins();
+        displayAdminDetails();
+
     }
 
     @SuppressWarnings("unchecked")
@@ -35,6 +36,7 @@ public class AdminsView extends javax.swing.JFrame {
         adminName = new javax.swing.JLabel();
         position = new javax.swing.JLabel();
         adminType = new javax.swing.JLabel();
+        username = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -98,6 +100,10 @@ public class AdminsView extends javax.swing.JFrame {
         adminType.setForeground(new java.awt.Color(119, 155, 255));
         adminType.setAlignmentX(0.5F);
 
+        username.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        username.setForeground(new java.awt.Color(119, 155, 255));
+        username.setAlignmentX(0.5F);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,7 +116,10 @@ public class AdminsView extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(username))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jSeparator1)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -140,7 +149,9 @@ public class AdminsView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(username))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -203,6 +214,15 @@ public class AdminsView extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void displayAdminDetails(){
+        // calling admins data object
+        Admins admins = DatabaseConnection.getDbConnection().getAdminDetails();
+        adminName.setText(admins.getAdminName());
+        adminType.setText(admins.getAdminType());
+        position.setText(admins.getPosition());
+        System.out.println("admin name "+admins.getAdminName());
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adminName;
@@ -217,5 +237,6 @@ public class AdminsView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel position;
+    public javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

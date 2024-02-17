@@ -12,6 +12,17 @@ public class Admins {
         //constructor
     }
 
+    public Admins(String username, String adminName, String position, String adminType) {
+        this.username = username;
+        this.adminName = adminName;
+        this.position = position;
+        this.adminType = adminType;
+    }
+    
+    public Admins(String username){
+        this.username = username;
+    }
+
     public String getUsername() {
         return username;
     }

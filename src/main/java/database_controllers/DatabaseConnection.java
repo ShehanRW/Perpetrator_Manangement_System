@@ -1,5 +1,6 @@
 package database_controllers;
 
+import DataObjects.Admins;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,12 +14,14 @@ public class DatabaseConnection {
     
     private static DatabaseConnection dbInstance;
     
-    Connection connection;
+    private Connection connection;
 
     private String url = "jdbc:mysql://localhost:3306/perpetratordb";
     private String user = "root";
     private String password = "";
     
+    private String username = null;
+        
     private DatabaseConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -59,5 +62,41 @@ public class DatabaseConnection {
         return adminPassword;
         
     }
+    
+    public Admins getAdminDetails(){
+        
+        String query = "SELECT * FROM admins WHERE userName = ?";
+        Admins admins = new Admins();
+        
+        try(PreparedStatement preparedStatement = connection.prepareStatement(query)){
+            preparedStatement.setString(1, username);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            
+            while(resultSet.next()){
+                String adUsername = username;
+                String adminName = resultSet.getString("adminName");
+                String adminType = resultSet.getString("adminType");
+                String position = resultSet.getString("position");
+
+                admins = new Admins(username, adminName, position, adminType);
+                
+            }
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+        
+        return admins;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    
     
 }
