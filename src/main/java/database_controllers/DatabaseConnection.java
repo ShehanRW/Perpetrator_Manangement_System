@@ -100,6 +100,8 @@ public class DatabaseConnection {
             preparedStmt.setString(3, adminName);
             preparedStmt.setString(4, position);
             preparedStmt.setString(5, adminType);
+            
+            preparedStmt.execute();
         }
         catch(SQLException e){
             e.printStackTrace();
