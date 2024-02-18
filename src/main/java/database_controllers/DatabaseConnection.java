@@ -88,6 +88,23 @@ public class DatabaseConnection {
         
         return admins;
     }
+    
+    public void addNewAdmin(String username, String adminName, String position, String adminType, String password){
+        String query = "INSERT INTO admins (userName, adminPassword, adminName, position, adminType)" + "VALUES(?, ?, ?, ?, ?)";
+        Admins admins = new Admins();
+        
+        try(PreparedStatement preparedStmt = connection.prepareStatement(query);){
+        
+            preparedStmt.setString(1, username);
+            preparedStmt.setString(2, password);
+            preparedStmt.setString(3, adminName);
+            preparedStmt.setString(4, position);
+            preparedStmt.setString(5, adminType);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    } 
 
     public String getUsername() {
         return username;
