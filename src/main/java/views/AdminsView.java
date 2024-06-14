@@ -6,6 +6,8 @@ import java.awt.Color;
 import javax.swing.JFrame;
 
 public class AdminsView extends javax.swing.JFrame {
+    
+    Admins admins = DatabaseConnection.getDbConnection().getAdminDetails();
 
     public AdminsView() {
         initComponents();
@@ -350,12 +352,11 @@ public class AdminsView extends javax.swing.JFrame {
     
     public void displayAdminDetails(){
         // calling admins data object
-        Admins admins = DatabaseConnection.getDbConnection().getAdminDetails();
+        
         adminName.setText(admins.getAdminName());
         adminType.setText(admins.getAdminType());
         position.setText(admins.getPosition());
         username.setText(admins.getUsername());
-        System.out.println("admin name "+admins.getAdminName());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

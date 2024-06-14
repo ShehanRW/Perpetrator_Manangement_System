@@ -10,6 +10,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import static javax.swing.JOptionPane.showMessageDialog;
 
+
+/* This class creates the database connection and let the access
+to the database called perpetratordb and control the access using
+methods with the database
+*/
+
 public class DatabaseConnection {
     
     private static DatabaseConnection dbInstance;
@@ -21,7 +27,8 @@ public class DatabaseConnection {
     private String password = "";
     
     private String username = null;
-        
+    
+    // access blocked constructor to make sure without instancing multiple times    
     private DatabaseConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -36,6 +43,7 @@ public class DatabaseConnection {
         }
     }
     
+    // calling for connection method
     public static DatabaseConnection getDbConnection(){
         if(dbInstance == null){
             dbInstance = new DatabaseConnection();
@@ -43,6 +51,7 @@ public class DatabaseConnection {
         return dbInstance;
     }
     
+    // method for access to make login
     public String getLoginDetails(String username){
         String adminPassword = "";
         String query = "SELECT userName, adminPassword FROM admins WHERE userName = ?";
@@ -63,6 +72,7 @@ public class DatabaseConnection {
         
     }
     
+    // method to access admin details
     public Admins getAdminDetails(){
         
         String query = "SELECT * FROM admins WHERE userName = ?";
@@ -89,6 +99,7 @@ public class DatabaseConnection {
         return admins;
     }
     
+    // method for add the admin
     public void addNewAdmin(String username, String adminName, String position, String adminType, String password){
         String query = "INSERT INTO admins (userName, adminPassword, adminName, position, adminType)" + "VALUES(?, ?, ?, ?, ?)";
         Admins admins = new Admins();

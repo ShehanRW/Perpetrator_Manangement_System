@@ -1,5 +1,7 @@
 package DataObjects;
 
+/* This class making admin objects to the database */
+
 public class Admins {
     
     private int id;
