@@ -102,7 +102,6 @@ public class DatabaseConnection {
     // method for add the admin
     public void addNewAdmin(String username, String adminName, String position, String adminType, String password){
         String query = "INSERT INTO admins (userName, adminPassword, adminName, position, adminType)" + "VALUES(?, ?, ?, ?, ?)";
-        Admins admins = new Admins();
         
         try(PreparedStatement preparedStmt = connection.prepareStatement(query);){
         
@@ -118,6 +117,32 @@ public class DatabaseConnection {
             e.printStackTrace();
         }
     } 
+    
+    // method for update the admin
+    public void updateAdmin (String adminName, String password, String reTypedPassword){
+         if (!password.equals(reTypedPassword)) {
+        System.out.println("Passwords do not match.");
+        return;
+        }
+
+        String query = "UPDATE admins SET adminName = ?, password = ? WHERE username = ?";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setString(1, adminName);
+            preparedStatement.setString(2, password);
+            preparedStatement.setString(3, username);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Admin updated successfully.");
+            } else {
+                System.out.println("Cannot update. Try re-login");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public String getUsername() {
         return username;

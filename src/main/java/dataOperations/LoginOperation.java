@@ -16,7 +16,10 @@ public class LoginOperation {
     
     public boolean isUserAccessible(String username, String password){
         loginOperation = DatabaseConnection.getDbConnection().getLoginDetails(username);
+        
+        // most important line which set the user name and it will track all the time when peticular user logged.
         DatabaseConnection.getDbConnection().setUsername(username);
+        
         boolean userValidation;
         if(loginOperation.equals(password) ){
             userValidation = true;

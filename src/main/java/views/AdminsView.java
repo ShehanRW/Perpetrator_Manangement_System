@@ -49,6 +49,19 @@ public class AdminsView extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        input_panel = new javax.swing.JPanel();
+        submit_btn = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        input_username = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        input_name = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        input_password = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        input_position = new javax.swing.JTextField();
+        input_role_combo = new javax.swing.JComboBox<>();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -259,6 +272,138 @@ public class AdminsView extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        input_panel.setBackground(new java.awt.Color(0, 11, 40));
+        input_panel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(119, 155, 255), 2, true));
+
+        submit_btn.setBackground(new java.awt.Color(0, 2, 69));
+        submit_btn.setForeground(new java.awt.Color(119, 155, 255));
+        submit_btn.setText("Submit");
+        submit_btn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        submit_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submit_btnActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(119, 155, 255));
+        jLabel11.setText("Add new admin");
+        jLabel11.setAlignmentX(0.5F);
+
+        jLabel12.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(119, 155, 255));
+        jLabel12.setText("Username");
+        jLabel12.setAlignmentX(0.5F);
+
+        input_username.setBackground(new java.awt.Color(0, 2, 69));
+        input_username.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        input_username.setForeground(new java.awt.Color(119, 155, 255));
+        input_username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        input_username.setSelectionColor(new java.awt.Color(191, 37, 37));
+
+        jLabel13.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(119, 155, 255));
+        jLabel13.setText("Name");
+        jLabel13.setAlignmentX(0.5F);
+
+        input_name.setBackground(new java.awt.Color(0, 2, 69));
+        input_name.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        input_name.setForeground(new java.awt.Color(119, 155, 255));
+        input_name.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        input_name.setSelectionColor(new java.awt.Color(191, 37, 37));
+
+        jLabel14.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(119, 155, 255));
+        jLabel14.setText("Password");
+        jLabel14.setAlignmentX(0.5F);
+
+        input_password.setBackground(new java.awt.Color(0, 2, 69));
+        input_password.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        input_password.setForeground(new java.awt.Color(119, 155, 255));
+        input_password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        input_password.setSelectionColor(new java.awt.Color(191, 37, 37));
+
+        jLabel15.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(119, 155, 255));
+        jLabel15.setText("Position");
+        jLabel15.setAlignmentX(0.5F);
+
+        input_position.setBackground(new java.awt.Color(0, 2, 69));
+        input_position.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
+        input_position.setForeground(new java.awt.Color(119, 155, 255));
+        input_position.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        input_position.setSelectionColor(new java.awt.Color(191, 37, 37));
+
+        input_role_combo.setBackground(new java.awt.Color(0, 11, 40));
+        input_role_combo.setForeground(new java.awt.Color(119, 155, 255));
+        input_role_combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Main Admin", "Admin (Operations)", "Data Entry" }));
+
+        jLabel16.setFont(new java.awt.Font("Bahnschrift", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(119, 155, 255));
+        jLabel16.setText("Role");
+        jLabel16.setAlignmentX(0.5F);
+
+        javax.swing.GroupLayout input_panelLayout = new javax.swing.GroupLayout(input_panel);
+        input_panel.setLayout(input_panelLayout);
+        input_panelLayout.setHorizontalGroup(
+            input_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(input_panelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(input_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(submit_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(input_panelLayout.createSequentialGroup()
+                        .addGroup(input_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(input_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(input_panelLayout.createSequentialGroup()
+                                    .addGroup(input_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(input_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(input_position, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(input_password, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(input_name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(input_username, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(input_panelLayout.createSequentialGroup()
+                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(input_role_combo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        input_panelLayout.setVerticalGroup(
+            input_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, input_panelLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel11)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(input_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(input_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(input_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(input_position, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(input_panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(input_role_combo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(submit_btn)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -276,11 +421,17 @@ public class AdminsView extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(updatePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1038, Short.MAX_VALUE)
-                .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1038, Short.MAX_VALUE)
+                        .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(20, 20, 20))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(input_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,9 +448,11 @@ public class AdminsView extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(89, 89, 89)
                 .addComponent(updatePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addContainerGap(307, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(69, 69, 69)
+                .addComponent(input_panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(back_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
             .addComponent(jSeparator2)
@@ -314,8 +467,12 @@ public class AdminsView extends javax.swing.JFrame {
     }//GEN-LAST:event_back_btnActionPerformed
 
     private void update_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_btnActionPerformed
-
+        
     }//GEN-LAST:event_update_btnActionPerformed
+
+    private void submit_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submit_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_submit_btnActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -358,13 +515,33 @@ public class AdminsView extends javax.swing.JFrame {
         position.setText(admins.getPosition());
         username.setText(admins.getUsername());
     }
+    
+    public void addNewAdmin(){
+        input_username.getText().toString();
+        input_name.getText().toString();
+        input_password.getText().toString();
+        input_position.getText().toString();
+        input_role_combo.getSelectedItem().toString();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel adminName;
     private javax.swing.JLabel adminType;
     private javax.swing.JButton back_btn;
+    private javax.swing.JTextField input_name;
+    private javax.swing.JPanel input_panel;
+    private javax.swing.JTextField input_password;
+    private javax.swing.JTextField input_position;
+    private javax.swing.JComboBox<String> input_role_combo;
+    private javax.swing.JTextField input_username;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -377,6 +554,7 @@ public class AdminsView extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel position;
+    private javax.swing.JButton submit_btn;
     private javax.swing.JPanel updatePanel;
     private javax.swing.JButton update_btn;
     private javax.swing.JTextField userNameTextField;
